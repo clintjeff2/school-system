@@ -1,0 +1,89 @@
+@use './../../scss/variables' as *;
+
+.main-nav {
+	display: flex;
+	align-items: center;
+	// border: 1px solid $color-black;
+	padding: 0.6rem 1.2rem;
+	background-color: $color-white;
+	margin-left: 30rem;
+	&__right,
+	&__left {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+	}
+	&__left {
+		margin-right: auto;
+		align-items: center;
+	}
+	&__right {
+	}
+	&__form {
+		border: 1px solid $color-grey;
+		padding: 1rem 2rem;
+		display: flex;
+		align-items: center;
+		&-search-input {
+			margin-left: 1rem;
+			color: $color-grey-dark;
+			font-size: 1.6rem;
+		}
+		&-search {
+			font-weight: bolder;
+			font-size: 2rem;
+			color: $color-grey;
+		}
+	}
+	&__logo {
+		background-color: $color-grey-light;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 4rem;
+		width: 4rem;
+		.image-pic__mini {
+			cursor: pointer;
+		}
+	}
+	&__profile {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 0 1rem;
+		transition: 0.3s;
+
+		&-pic {
+			border: 0.2rem solid $color-grey;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 4rem;
+			width: 4rem;
+			padding: 0.2rem;
+		}
+		&-details {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+			.role {
+				color: $color-primary;
+			}
+		}
+
+		&:hover {
+			background-color: $color-grey-light;
+			cursor: pointer;
+		}
+	}
+	&__notification,
+	&__settings {
+		// border: 1px solid red;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 4rem;
+		background-color: $color-grey-light;
+		width: 4rem;
+	}
+}
