@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { lmuLogo } from '../../assets/logos';
-
+import leftNavData from './../../assets/data/leftNavigationData';
 import LeftNavSection from './LeftNavSection';
 
 //height auto, 0, transition
@@ -13,11 +13,15 @@ function LeftNav() {
 				<img src={lmuLogo} alt="Landmark Logo" className="logo-pic rounded" />
 				<span className="logo">lmu</span>
 			</header>
-			<br /><br /><br /><br />
-			
-			<LeftNavSection />
-			<LeftNavSection />
-			<LeftNavSection />
+			<br />
+			<br />
+			<br />
+			<br />
+			{leftNavData.map((item, index) => {
+				return (
+					<LeftNavSection menu={item.menu} items={item.items} key={index} />
+				);
+			})}
 		</nav>
 	);
 }

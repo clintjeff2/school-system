@@ -7,6 +7,9 @@
 	padding: 0.6rem 1.2rem;
 	background-color: $color-white;
 	margin-left: 30rem;
+	position: fixed;
+	width: calc(100% - 32rem);
+	top: 0;
 	&__right,
 	&__left {
 		display: flex;

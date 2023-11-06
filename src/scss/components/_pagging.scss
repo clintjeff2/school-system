@@ -1,0 +1,37 @@
+@use './../variables' as *;
+
+.pagging {
+	display: flex;
+	align-items: center;
+
+	span.text {
+		margin-right: auto;
+	}
+	&-links {
+		display: flex;
+		align-items: center;
+
+		a {
+			padding: 1rem 1.5rem;
+			border: 1px solid $color-primary;
+			text-decoration: none;
+			transition: .3s all;
+			&:hover {
+				color: $color-white;
+				background-color: $color-primary;
+			}
+		}
+	}
+}
+
+.entries {
+	color: $color-grey;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	select {
+		border: 1px solid $color-grey;
+		color: $color-grey;
+		outline: none;
+	}
+}

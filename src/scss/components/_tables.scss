@@ -1,0 +1,66 @@
+@use './../variables' as *;
+
+table {
+	&.standard {
+		border-collapse: collapse;
+		width: 100%;
+		tr {
+			// border: 1px solid black;
+			&:nth-child(odd) {
+				background-color: lighten($color-grey-light, 1%);
+			}
+			th,
+			td {
+				text-align: left;
+				// border: 1px solid blue;
+			}
+			td {
+				padding: 0.5rem 1rem;
+				& .profile {
+					display: flex;
+					align-items: center;
+					gap: 1rem;
+					img {
+						height: 5rem;
+						width: 5rem;
+						border-radius: 100%;
+					}
+				}
+
+				&:last-child {
+					div.actions {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						gap: 2rem;
+
+						a {
+							// border: 1px solid black;
+							height: 3rem;
+							width: 3rem;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							border-radius: 100%;
+							// background-color: $color-grey;
+							text-decoration: none;
+							color: $color-grey;
+
+							background-color: $color-grey-light;
+						}
+					}
+				}
+			}
+		}
+		tr.head {
+			background-color: darken($color-grey-light, 2%);
+			th {
+				text-transform: capitalize;
+				padding: 2rem 1rem;
+				span.text {
+					margin-left: 1.5rem;
+				}
+			}
+		}
+	}
+}

@@ -1,17 +1,13 @@
 import React from 'react';
 import LeftNavSectionItem from './LeftNavSectionItem';
 
-function LeftNavSection() {
+function LeftNavSection({ menu, items }) {
 	return (
 		<section className="section section-main">
-			<h3 className="header-tertiary">main menu</h3>
-			<LeftNavSectionItem />
-			<LeftNavSectionItem />
-			<LeftNavSectionItem />
-			<LeftNavSectionItem />
-			<LeftNavSectionItem />
-			<LeftNavSectionItem />
-			<LeftNavSectionItem />
+			<h3 className="header-tertiary">{menu} menu</h3>
+			{items.map((item, index) => {
+				return <LeftNavSectionItem list={item} icon={item.icon} key={index} />;
+			})}
 		</section>
 	);
 }

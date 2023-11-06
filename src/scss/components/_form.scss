@@ -1,0 +1,41 @@
+@use './../variables' as *;
+form#student,
+form#teacher {
+	& .form {
+		display: flex;
+		gap: 2rem;
+		flex-wrap: wrap;
+
+		&-item {
+			width: 30%;
+			// border: 1px solid red;
+			input {
+				padding: 1.5rem 1rem;
+				border-radius: 0.5rem;
+				width: 100%;
+				box-sizing: border-box;
+				outline: none;
+				border: 1px solid $color-grey;
+				&:focus {
+					outline: 2px solid $color-primary;
+				}
+			}
+			span.desc {
+				display: inline-block;
+				// border: 1px solid blue;
+				padding: 0 0.5rem;
+				color: $color-black;
+				font-size: 1.3rem;
+				transform: translateY(50%);
+				background-color: $color-white;
+				margin-left: 1rem;
+				em {
+					color: red;
+				}
+			}
+		}
+		&-file {
+			width: 100%;
+		}
+	}
+}

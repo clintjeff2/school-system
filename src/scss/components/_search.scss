@@ -1,0 +1,25 @@
+@use './../variables' as *;
+.search-category {
+	display: flex;
+	align-items: center;
+	gap: 3rem;
+	input {
+		padding: 1.3rem 1.2rem;
+		width: 24%;
+		font-size: 1.7rem;
+		font-family: inherit;
+		color: $color-grey;
+		border: 1px solid rgba($color-grey, .3);
+    border-radius: .2rem;
+		::placeholder {
+			color: $color-grey;
+		}
+		&:focus {
+			outline: 2px solid $color-primary;
+		}
+	}
+}
+
+input.input {
+  font-family: Josefin Sans;
+}

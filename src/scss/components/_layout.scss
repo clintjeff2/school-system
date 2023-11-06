@@ -1,0 +1,48 @@
+@use './../variables' as *;
+.main {
+	&.from-left {
+		margin: 3.5rem 3rem 2rem;
+		margin-left: 33rem;
+	}
+	// background-color: red;
+}
+
+.section-intro {
+	display: flex;
+	align-items: center;
+	text-transform: capitalize;
+	& h1 {
+		margin-right: auto;
+	}
+	& h2 {
+		color: $color-grey;
+		.main {
+			color: $color-black;
+		}
+	}
+}
+.section-main-intro {
+	display: flex;
+	align-items: center;
+
+	h2{
+		margin-right: auto;
+	}
+	.actions{
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		button {
+			display: flex;
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+			gap: 1.5rem;
+		}
+	}
+	// button {
+	// 	display: flex;
+	// 	gap: 1.5rem;
+	// 	align-items: center;
+	// }
+}

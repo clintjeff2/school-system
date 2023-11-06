@@ -1,12 +1,15 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Layout from '../components/layout/Layout';
+
+//PAGES
+import StudentRoute from './pages/students';
+import TeacherRoute from './pages/teachers';
 
 function Router() {
 	return (
-		<Routes>
-			<Route path="/" element={<Layout />} />
-		</Routes>
+		<>
+			<StudentRoute />
+			<TeacherRoute />
+		</>
 	);
 }
 

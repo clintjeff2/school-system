@@ -13,12 +13,17 @@ function MainNav() {
 				<button className="button-main">
 					<FaBars className="main-nav__responsive" />
 				</button>
-				<form action="" className="main-nav__form rounded__small">
+				<form
+					action=""
+					className="main-nav__form rounded__small"
+					name="general-search"
+				>
 					<FaSistrix className="main-nav__form-search icons" />
 					<input
 						type="text"
 						placeholder="Search here"
 						className="main-nav__form-search-input input"
+						name="main-search"
 					/>
 				</form>
 			</div>

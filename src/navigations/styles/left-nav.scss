@@ -24,8 +24,9 @@
 		// border: 1px solid blue;
 		padding-left: 3rem;
 		position: fixed; //remember this during maintainance
-		width:100%;
+		width: 27rem;
 		z-index: 2;
+		background-color: $color-white;
 	}
 
 	& .section {
@@ -50,6 +51,11 @@
 				cursor: pointer;
 				transition: 0.4s all;
 				padding-right: 2rem;
+				text-transform: capitalize;
+				a.link-head {
+					text-decoration: none;
+					color: $color-grey-dark;
+				}
 				span.text {
 					margin-right: auto;
 				}
@@ -83,6 +89,7 @@
 						padding: 1rem;
 						padding-left: 3.5rem;
 						margin: 0.15rem;
+						text-transform: capitalize;
 						&.active {
 							background-color: $color-primary;
 							color: $color-white;

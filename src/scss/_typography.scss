@@ -9,6 +9,39 @@
 	font-size: 1.7rem;
 	font-weight: bolder;
 	cursor: pointer;
+	text-transform: capitalize;
+
+	&-small {
+		padding: 1rem 1rem;
+	}
+
+	&-medium {
+		padding: 1rem 3rem;
+		font-size: 2rem !important;
+		// text-transform: uppercase;
+		font-family: inherit;
+	}
+}
+
+.mg {
+	&-top {
+		margin-top: 2rem;
+		&-md {
+			margin-top: 4rem;
+		}
+		&-lg {
+			margin-top: 6rem;
+		}
+	}
+	&-bt {
+		margin-bottom: 2rem;
+		&-md {
+			margin-bottom: 4rem;
+		}
+		&-lg {
+			margin-bottom: 6rem;
+		}
+	}
 }
 
 .image-pic {
@@ -50,6 +83,10 @@
 		margin: 0;
 		padding: 0;
 		// font-size: 1.6rem;
+	}
+	&-primary {
+		margin: 0;
+		padding: 0;
 	}
 }
 
