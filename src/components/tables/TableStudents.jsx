@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 //Styled in the table sass file of the component styles
 
 //Reusable table for all pages
-function StandardTable({ styles }) {
+function StandardTable({ styles, tableData, header }) {
 	return (
 		<table className={`standard ${styles ? styles : ''}`}>
 			<thead>
@@ -17,53 +17,60 @@ function StandardTable({ styles }) {
 					</th>
 					<th>
 						<FaRightLeft />
-						<span className="text">ID</span>
+						<span className="text">{header.id}</span>
 					</th>
 					<th>
 						<FaRightLeft />
-						<span className="text">Name</span>
+						<span className="text">{header.name}</span>
 					</th>
 					<th>
 						<FaRightLeft />
-						<span className="text">class</span>
+						<span className="text">{header.level}</span>
 					</th>
 					<th>
 						<FaRightLeft />
-						<span className="text">doB</span>
+						<span className="text">{header.dob}</span>
 					</th>
 					<th>
 						<FaRightLeft />
-						<span className="text">Parent Name</span>
+						<span className="text">{header.parent}</span>
 					</th>
 					<th>
 						<FaRightLeft />
-						<span className="text">mobile number</span>
+						<span className="text">{header.tel}</span>
 					</th>
 					<th>
 						<FaRightLeft />
-						<span className="text">address</span>
+						<span className="text">{header.specialty}</span>
 					</th>
 					<th>
 						<FaRightLeft />
-						<span className="text">actions</span>
+						<span className="text">{header.address}</span>
+					</th>
+					<th>
+						<FaRightLeft />
+						<span className="text">{header.acts}</span>
 					</th>
 				</tr>
 			</thead>
 
 			<tbody>
-				{Array.from({ length: 200 }).map((_, index) => {
+				{tableData.map((row, index) => {
 					return (
 						<tr key={index}>
 							<td>
 								<input type="checkbox" name="check-1" />
 							</td>
 							<td>
-								<span className="text">123DAS</span>
+								<span className="text">{row._id}</span>
 							</td>
 							<td>
 								<div className="profile">
-									<img src={profile13} alt="Student Pic" />
-									<span className="text">Lucida Sans</span>
+									<img
+										src={row?.profile ? row.profile : profile13}
+										alt="Student Pic"
+									/>
+									<span className="text">{row.name}</span>
 								</div>
 							</td>
 							<td>
@@ -76,12 +83,10 @@ function StandardTable({ styles }) {
 								<span className="text">Josefin Sans</span>
 							</td>
 							<td>
-								<span className="text">698753441</span>
+								<span className="text">{row.tel}</span>
 							</td>
 							<td>
-								<span className="text">
-									Bacardi Rd P.O. Box N-4880, New Providence
-								</span>
+								<span className="text">{row.specialty?.name}</span>
 							</td>
 							<td>
 								<div className="actions">

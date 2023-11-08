@@ -1,5 +1,6 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getStudents } from '../../../store/students/studentSlice';
 import {
 	Layout,
 	SectionIntro,
@@ -7,9 +8,28 @@ import {
 } from '../../../components/layout/';
 import { PaggingNumSelect, Paggination } from './../../../components/pagging/';
 import SearchCategory from '../../../components/search/SearchCategory';
-import { StandardTable } from '../../../components/tables/';
+import { TableStudents } from '../../../components/tables/';
+
+const studentHeader = {
+	id: 'ID',
+	name: 'Name',
+	level: 'class',
+	dob: 'DoB',
+	parent: 'Parent name',
+	tel: 'phone Number',
+	acts: 'actions',
+	specialty: 'specialty',
+	address: 'address',
+};
 
 function StudentList() {
+	const dispatch = useDispatch();
+	const { students } = useSelector((state) => state.students);
+	console.log(students);
+	useEffect(() => {
+		dispatch(getStudents());
+	}, []);
+
 	return (
 		<Layout>
 			<SectionIntro title="Students" main="Student" sub="List" />
@@ -17,7 +37,11 @@ function StudentList() {
 			<section className="student">
 				<SectionMainIntro title="Students" styles="mg-bt" />
 				<PaggingNumSelect />
-				<StandardTable styles="mg-top" />
+				<TableStudents
+					styles="mg-top"
+					tableData={students}
+					header={studentHeader}
+				/>
 				<Paggination styles="mg-top" />
 			</section>
 		</Layout>

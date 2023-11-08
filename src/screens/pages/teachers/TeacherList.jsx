@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getStaffs } from '../../../store/staffs/staffSlice';
 
 import {
 	Layout,
@@ -7,9 +9,15 @@ import {
 } from '../../../components/layout/';
 import { PaggingNumSelect, Paggination } from './../../../components/pagging/';
 import SearchCategory from '../../../components/search/SearchCategory';
-import { StandardTable } from '../../../components/tables/';
+// import { StandardTable } from '../../../components/tables/';
 
 function TeacherList() {
+	const staffs = useSelector((state) => state.staffs);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(getStaffs());
+	}, [dispatch]);
 	return (
 		<Layout>
 			<SectionIntro title="Teachers" main="Teacher" sub="List" />
@@ -17,10 +25,11 @@ function TeacherList() {
 			<section className="teachers">
 				<SectionMainIntro title="Teachers" styles="mg-bt" />
 				<PaggingNumSelect />
-				<StandardTable styles="mg-top" />
+				{/* <StandardTable styles="mg-top" data={staffs} /> */}
 				<Paggination styles="mg-top" />
 			</section>
 		</Layout>
 	);
 }
+
 export default TeacherList;
