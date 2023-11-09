@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaRightLeft } from 'react-icons/fa6';
 import { BsEyeFill, BsFillPenFill } from 'react-icons/bs';
 
-import { profile13 } from '../../assets/images';
-import { Link } from 'react-router-dom';
+import { profile_default } from '../../assets/images';
 //Styled in the table sass file of the component styles
 
-//Reusable table for all pages
+import { getDateFromDateObject } from '../../utilities/getDate';
+
 function StandardTable({ styles, tableData, header }) {
 	return (
 		<table className={`standard ${styles ? styles : ''}`}>
@@ -62,31 +63,34 @@ function StandardTable({ styles, tableData, header }) {
 								<input type="checkbox" name="check-1" />
 							</td>
 							<td>
-								<span className="text">{row._id}</span>
+								<span className="text">{row.matricule}</span>
 							</td>
 							<td>
 								<div className="profile">
 									<img
-										src={row?.profile ? row.profile : profile13}
+										src={row?.profile ? row.profile : profile_default}
 										alt="Student Pic"
 									/>
 									<span className="text">{row.name}</span>
 								</div>
 							</td>
 							<td>
-								<span className="text">Level 400</span>
+								<span className="text">Level {row.level}</span>
 							</td>
 							<td>
-								<span className="text">2000-06-01</span>
+								<span className="text">{getDateFromDateObject(row.dob)}</span>
 							</td>
 							<td>
-								<span className="text">Josefin Sans</span>
+								<span className="text">{row.parent_name}</span>
 							</td>
 							<td>
 								<span className="text">{row.tel}</span>
 							</td>
 							<td>
 								<span className="text">{row.specialty?.name}</span>
+							</td>
+							<td>
+								<span className="text">{row.address}</span>
 							</td>
 							<td>
 								<div className="actions">
