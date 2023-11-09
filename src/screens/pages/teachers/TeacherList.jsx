@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { getStaffs } from '../../../store/staffs/staffSlice';
 
 import {
@@ -12,7 +12,7 @@ import SearchCategory from '../../../components/search/SearchCategory';
 // import { StandardTable } from '../../../components/tables/';
 
 function TeacherList() {
-	const staffs = useSelector((state) => state.staffs);
+	// const staffs = useSelector((state) => state.staffs);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
