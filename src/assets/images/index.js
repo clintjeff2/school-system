@@ -12,6 +12,7 @@ import profile11 from './profile11.jpeg';
 import profile12 from './profile12.jpeg';
 import profile13 from './profile13.jpeg';
 import profile14 from './profile14.jpeg';
+import profile_default from './default.png';
 
 export {
 	profile1,
@@ -28,4 +29,5 @@ export {
 	profile12,
 	profile13,
 	profile14,
+	profile_default,
 };
