@@ -8,7 +8,7 @@ function StudentAdd() {
 			<SectionIntro title="Add Students" main="Student" sub="add" />
 			<section className="students mg-top">
 				<h2 className="header-secondary">Student Information</h2>
-				<StudentForm />
+				<StudentForm styles="mg-top-md" />
 			</section>
 		</Layout>
 	);
