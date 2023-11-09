@@ -24,11 +24,11 @@ const studentHeader = {
 
 function StudentList() {
 	const dispatch = useDispatch();
-	const { students } = useSelector((state) => state.students);
+	const {students} = useSelector((state) => state.students);
 	console.log(students);
 	useEffect(() => {
 		dispatch(getStudents());
-	}, []);
+	}, [dispatch]);
 
 	return (
 		<Layout>
