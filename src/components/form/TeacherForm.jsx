@@ -1,6 +1,6 @@
 import React from 'react';
 
-function StudentForm() {
+function StaffForm() {
 	return (
 		<form action="" name="form" id="teacher">
 			<h2 className="mg-top-md mg-bt-md">Basic Details</h2>
@@ -200,4 +200,4 @@ function StudentForm() {
 	);
 }
 
-export default StudentForm;
+export default StaffForm;
