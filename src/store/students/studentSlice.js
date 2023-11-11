@@ -69,7 +69,7 @@ export const addStudent = createAsyncThunk(
 				},
 			});
 
-			console.log(res);
+			// console.log(res);
 			return res.data;
 		} catch (err) {
 			console.log(err);
@@ -83,6 +83,15 @@ const studentSlice = createSlice({
 	initialState,
 	reducers: {
 		removeStudent() {},
+		// searchStudentName(state, action) {
+		// 	const student = state.students.filter(
+		// 		(std) => std.name === action.payload
+		// 	);
+		// 	// console.log(student, state.students, action.payload);
+		// 	state.students = student;
+		// 	console.log(state.students);
+		// },
+		// searchStudentLevel() {},
 	},
 	extraReducers: (builder) => {
 		builder
