@@ -12,5 +12,5 @@ export const getDateFromDateObject = (Obj) => {
 	let day = dateObj.getDate();
 	day = day < 10 ? `0${day}` : day;
 
-	return `${year}-${month}-${day}`;
+	return `${month}-${day}-${year}`;
 };
