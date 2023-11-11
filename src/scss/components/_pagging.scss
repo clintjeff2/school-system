@@ -15,11 +15,15 @@
 			padding: 1rem 1.5rem;
 			border: 1px solid $color-primary;
 			text-decoration: none;
-			transition: .3s all;
+			transition: 0.3s all;
 			&:hover {
 				color: $color-white;
 				background-color: $color-primary;
 			}
+		}
+		a.page-active {
+			color: $color-white;
+			background-color: $color-primary;
 		}
 	}
 }

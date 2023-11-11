@@ -6,16 +6,38 @@ table {
 		width: 100%;
 		tr {
 			// border: 1px solid black;
+			padding: 0.5rem 0rem;
 			&:nth-child(odd) {
 				background-color: lighten($color-grey-light, 1%);
+			}
+			th {
+				// text-align: center;
+
+				& svg {
+					transform: rotate(90deg);
+					color: $color-grey;
+					&:hover {
+						cursor: pointer;
+					}
+				}
+			}
+			th.sorted {
+				& svg {
+					color: $color-primary;
+				}
 			}
 			th,
 			td {
 				text-align: left;
+				// padding-left: .3rem;
 				// border: 1px solid blue;
+				// padding: 0 ;
+
+				&:first-child {
+					padding-left: 1.5rem;
+				}
 			}
 			td {
-				padding: 0.5rem 1rem;
 				& .profile {
 					display: flex;
 					align-items: center;
