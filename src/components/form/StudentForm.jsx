@@ -1,8 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
+//import action creator slices
 import { getSpecialties } from '../../store/specialty/specialtySlice';
 import { addStudent } from '../../store/students/studentSlice';
 
+//initialize default information
 const defaultInfo = {
 	level: '200',
 	gender: 'male',
@@ -21,30 +24,28 @@ const defaultInfo = {
 };
 
 function StudentForm({ styles }) {
+	//create dispatch to dispatch actions and useSelect for getting out information
 	const dispatch = useDispatch();
 	const specialties = useSelector((state) => state.specialty.specialties.data);
-	console.log(specialties);
+
+	//initialize the main hooks
 	const [studentData, setStudentData] = useState(defaultInfo);
 	const specialty = useRef();
-	console.log(studentData, 'DATA');
+	// console.log(studentData, 'DATA');
 
+	//Get all specialties after initial render
 	useEffect(() => {
 		dispatch(getSpecialties());
 	}, [dispatch]);
 
+	//Execute this function when you click submit, to add a student
 	const registerStudent = (e) => {
 		e.preventDefault();
-
-		// setStudentData((prev) => {
-		// 	return { ...prev, specialty: specialty.current.value };
-		// });
 
 		dispatch(
 			addStudent({ ...studentData, specialty: specialty.current.value })
 		);
-
-		console.log(studentData);
-		// setStudentData(defaultInfo);
+		setStudentData(defaultInfo);
 	};
 	return (
 		<form
